@@ -1,0 +1,23 @@
+# GameMaker archives/packages
+*.yyz
+*.yymps
+
+# Backup/temporary
+*.yyp.backup
+*.temp/
+*.log
+
+# IDE/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local options/certs
+*/options/local_*
+*/options/ios/Certificates
+*/options/ios/Profiles
+
+# Build/cache/output
+*/output/
+*/cache/
