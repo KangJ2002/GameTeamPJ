@@ -23,9 +23,12 @@
   },
   "name":"mine",
   "resources":[
+    {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
+    {"id":{"name":"obj_iron","path":"objects/obj_iron/obj_iron.yy",},},
     {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
     {"id":{"name":"obj_Rock","path":"objects/obj_Rock/obj_Rock.yy",},},
     {"id":{"name":"room_Mine","path":"rooms/room_Mine/room_Mine.yy",},},
+    {"id":{"name":"spr_iron","path":"sprites/spr_iron/spr_iron.yy",},},
     {"id":{"name":"spr_Player","path":"sprites/spr_Player/spr_Player.yy",},},
     {"id":{"name":"spr_Rock","path":"sprites/spr_Rock/spr_Rock.yy",},},
   ],
