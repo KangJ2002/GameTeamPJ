@@ -1,2 +1,2 @@
-move_speed = 10;
+move_speed = 20;
 input_h = 0;
