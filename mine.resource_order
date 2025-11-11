@@ -4,5 +4,8 @@
     {"name":"Room","order":3,"path":"folders/Room.yy",},
     {"name":"Sprite","order":1,"path":"folders/Sprite.yy",},
   ],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_Rock","order":1,"path":"objects/obj_Rock/obj_Rock.yy",},
+    {"name":"spr_Rock","order":1,"path":"sprites/spr_Rock/spr_Rock.yy",},
+  ],
 }

@@ -24,13 +24,15 @@
   "name":"mine",
   "resources":[
     {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"obj_Rock","path":"objects/obj_Rock/obj_Rock.yy",},},
+    {"id":{"name":"room_Mine","path":"rooms/room_Mine/room_Mine.yy",},},
     {"id":{"name":"spr_Player","path":"sprites/spr_Player/spr_Player.yy",},},
+    {"id":{"name":"spr_Rock","path":"sprites/spr_Rock/spr_Rock.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"room_Mine","path":"rooms/room_Mine/room_Mine.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
