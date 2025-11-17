@@ -29,6 +29,8 @@ if(mining_cooldown_timer > 0){
 if(mouse_check_button(mb_left) && mining_cooldown_timer <= 0){
 	mining_cooldown_timer = mining_cooldown_max;
 	
+	show_debug_message(">>>공 격 실 행 됨<<< ");
+	
 	var _attack_dir = point_direction(x, y, mouse_x, mouse_y);
 	
 	
@@ -50,8 +52,10 @@ if(mouse_check_button(mb_left) && mining_cooldown_timer <= 0){
 				if(hp<=0){
 					var _final_value = rock_value;
 					
-					other.global.currency += _final_value;
+					global.currency += _final_value;
 					
+					// debug
+					show_debug_message("currency increased to : " + string(global.currency));
 					instance_destroy();
 				}
 			}

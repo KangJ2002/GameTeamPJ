@@ -5,6 +5,7 @@
     {"name":"Sprite","order":1,"path":"folders/Sprite.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"fnt_Basic","order":4,"path":"fonts/fnt_Basic/fnt_Basic.yy",},
     {"name":"obj_Controller","order":2,"path":"objects/obj_Controller/obj_Controller.yy",},
     {"name":"obj_Rock","order":1,"path":"objects/obj_Rock/obj_Rock.yy",},
     {"name":"spr_Rock","order":1,"path":"sprites/spr_Rock/spr_Rock.yy",},
