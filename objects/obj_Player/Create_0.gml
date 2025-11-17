@@ -13,3 +13,5 @@ atk_angle = 70;    // 전방 아크 공격 각도(도), 전체 각도
 is_attacking = false;
 attack_timer = 0;
 attack_time = 8;   // 공격 지속 프레임(히트박스 유효 시간)
+
+//test
