@@ -29,9 +29,36 @@ if(mining_cooldown_timer > 0){
 if(mouse_check_button(mb_left) && mining_cooldown_timer <= 0){
 	mining_cooldown_timer = mining_cooldown_max;
 	
-	/*
-	여 기 에 채 굴 ( 공 격 ) 로 직 함 수 추 가 예 정 
-	*/
+	var _attack_dir = point_direction(x, y, mouse_x, mouse_y);
+	
+	
+	// 공격 사거리 끝 지점 계산
+	var _end_x = x + lengthdir_x(global.Range_radius, _attack_dir);
+	var _end_y = y + lengthdir_y(global.Range_radius, _attack_dir);
+	
+	// 마우스 방향으로 채굴
+	var _hit_list = ds_list_create();
+	var _num_hit = collision_line_list(x, y, _end_x, _end_y, obj_Rock, false, true, _hit_list, false);
+	
+	// 충돌시 데미지 적용
+	if (_num_hit > 0) {
+		for( var i = 0; i<_num_hit; i++){
+			var _target_rock = _hit_list[| i];
+			_target_rock.hp -= global.mining_Damage;
+			
+			with(_target_rock){
+				if(hp<=0){
+					var _final_value = rock_value;
+					
+					other.global.currency += _final_value;
+					
+					instance_destroy();
+				}
+			}
+		}
+	}
+	
+	ds_list_destroy(_hit_list);
 }
 
 
