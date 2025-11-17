@@ -8,6 +8,11 @@
     {"name":"fnt_Basic","order":4,"path":"fonts/fnt_Basic/fnt_Basic.yy",},
     {"name":"obj_Controller","order":2,"path":"objects/obj_Controller/obj_Controller.yy",},
     {"name":"obj_Rock","order":1,"path":"objects/obj_Rock/obj_Rock.yy",},
+    {"name":"room_Intro","order":1,"path":"rooms/room_Intro/room_Intro.yy",},
+    {"name":"room_Mine2","order":3,"path":"rooms/room_Mine2/room_Mine2.yy",},
+    {"name":"room_Shop","order":2,"path":"rooms/room_Shop/room_Shop.yy",},
+    {"name":"spr_Background","order":3,"path":"sprites/spr_Background/spr_Background.yy",},
     {"name":"spr_Rock","order":1,"path":"sprites/spr_Rock/spr_Rock.yy",},
+    {"name":"spr_Shop","order":2,"path":"sprites/spr_Shop/spr_Shop.yy",},
   ],
 }
