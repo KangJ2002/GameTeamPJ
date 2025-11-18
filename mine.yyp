@@ -25,6 +25,7 @@
   "resources":[
     {"id":{"name":"fnt_Basic","path":"fonts/fnt_Basic/fnt_Basic.yy",},},
     {"id":{"name":"obj_Controller","path":"objects/obj_Controller/obj_Controller.yy",},},
+    {"id":{"name":"obj_Pickax1","path":"objects/obj_Pickax1/obj_Pickax1.yy",},},
     {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
     {"id":{"name":"obj_Rock","path":"objects/obj_Rock/obj_Rock.yy",},},
     {"id":{"name":"room_Intro","path":"rooms/room_Intro/room_Intro.yy",},},
@@ -32,6 +33,8 @@
     {"id":{"name":"room_Mine2","path":"rooms/room_Mine2/room_Mine2.yy",},},
     {"id":{"name":"room_Shop","path":"rooms/room_Shop/room_Shop.yy",},},
     {"id":{"name":"spr_Background","path":"sprites/spr_Background/spr_Background.yy",},},
+    {"id":{"name":"spr_Pickax","path":"sprites/spr_Pickax/spr_Pickax.yy",},},
+    {"id":{"name":"spr_Pickax1","path":"sprites/spr_Pickax1/spr_Pickax1.yy",},},
     {"id":{"name":"spr_Player","path":"sprites/spr_Player/spr_Player.yy",},},
     {"id":{"name":"spr_Rock","path":"sprites/spr_Rock/spr_Rock.yy",},},
     {"id":{"name":"spr_Shop","path":"sprites/spr_Shop/spr_Shop.yy",},},

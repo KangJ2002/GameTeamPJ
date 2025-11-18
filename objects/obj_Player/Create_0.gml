@@ -10,3 +10,5 @@ global.currency = 0;		//재화
 mining_cooldown_timer = 0;	//공격쿨타임
 mining_cooldown_max = room_speed / global.mining_Speed;
 
+
+pickax = instance_create_layer(x, y, "Instances", obj_Pickax1);

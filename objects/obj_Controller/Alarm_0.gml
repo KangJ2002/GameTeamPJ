@@ -7,4 +7,4 @@ if (instance_number(obj_Rock) < max_count) {
 }
 
 
-alarm[0] = 120; 
+alarm[0] = 180; 
