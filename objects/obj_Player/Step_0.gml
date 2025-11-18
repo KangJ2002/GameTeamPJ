@@ -65,4 +65,6 @@ if(mouse_check_button(mb_left) && mining_cooldown_timer <= 0){
 	ds_list_destroy(_hit_list);
 }
 
+//aa
+
 
