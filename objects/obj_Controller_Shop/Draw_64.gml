@@ -1,0 +1,1 @@
+draw_text(520, 550, "UPGRADE");

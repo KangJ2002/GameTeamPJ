@@ -1,16 +1,18 @@
 // 플레이어 이동구현
+if (room != room_Shop) {
+	
 var mx = (keyboard_check(vk_right) || keyboard_check(ord("D"))) - (keyboard_check(vk_left) || keyboard_check(ord("A")));
 var my = (keyboard_check(vk_down)  || keyboard_check(ord("S"))) - (keyboard_check(vk_up)   || keyboard_check(ord("W")));
 
-if (mx != 0 || my != 0) {
+ if (mx != 0 || my != 0) {
     var len = point_distance(0, 0, mx, my);
     mx /= len; 
     my /= len;
+ }
+
+ x += mx * spd;
+ y += my * spd;
 }
-
-x += mx * spd;
-y += my * spd;
-
 // 이미지 좌우반전
 if (mouse_x < x) {
     image_xscale = -1;   // 왼쪽 바라봄 (좌우 반전)
