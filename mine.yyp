@@ -38,6 +38,7 @@
     {"id":{"name":"spr_Player","path":"sprites/spr_Player/spr_Player.yy",},},
     {"id":{"name":"spr_Rock","path":"sprites/spr_Rock/spr_Rock.yy",},},
     {"id":{"name":"spr_Shop","path":"sprites/spr_Shop/spr_Shop.yy",},},
+    {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

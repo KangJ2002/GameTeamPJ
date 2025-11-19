@@ -17,5 +17,6 @@
     {"name":"spr_Pickax1","order":6,"path":"sprites/spr_Pickax1/spr_Pickax1.yy",},
     {"name":"spr_Rock","order":1,"path":"sprites/spr_Rock/spr_Rock.yy",},
     {"name":"spr_Shop","order":2,"path":"sprites/spr_Shop/spr_Shop.yy",},
+    {"name":"Sprite7","order":7,"path":"sprites/Sprite7/Sprite7.yy",},
   ],
 }
