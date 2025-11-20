@@ -1,13 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Pickax1",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":53,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_Pickaxe3",
+  "eventList":[],
   "managed":true,
-  "name":"obj_Pickax1",
+  "name":"obj_Pickaxe3",
   "overriddenProperties":[],
   "parent":{
     "name":"Object",
@@ -32,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Pickax1",
-    "path":"sprites/spr_Pickax1/spr_Pickax1.yy",
+    "name":"spr_Pickax3",
+    "path":"sprites/spr_Pickax3/spr_Pickax3.yy",
   },
   "spriteMaskId":null,
   "visible":true,

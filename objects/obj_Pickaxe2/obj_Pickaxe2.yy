@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Pickax2",
+  "%Name":"obj_Pickaxe2",
   "eventList":[],
   "managed":true,
-  "name":"obj_Pickax2",
+  "name":"obj_Pickaxe2",
   "overriddenProperties":[],
   "parent":{
     "name":"Object",
