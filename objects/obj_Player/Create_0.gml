@@ -1,11 +1,23 @@
 spd = 3;
 image_xscale = 1; // 초기 바라보는 방향(오른쪽)
 
-global.mining_Damage = 1;	//채굴 데미지
-global.mining_Speed = 1.0;	//채굴 공격속도
-global.Range_radius = 32;	//채굴 사거리
+if(variable_global_exists("move_speed")){
+	spd = global.move_speed;
+}
+else{
+	spd = 3;
+}
 
-global.currency = 0;		//재화 
+if (variable_global_exists("mining_Speed")){
+	mining_cooldown_max = room_speed / global.mining_Speed;
+}
+else{
+	mining_cooldown_max = room_speed / 1.0;
+}
+
+if (!variable_global_exists("currency")) {
+    global.currency = 0;
+}
 
 mining_cooldown_timer = 0;	//공격쿨타임
 mining_cooldown_max = room_speed / global.mining_Speed;
