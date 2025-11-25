@@ -1,1 +1,0 @@
-image_angle = angle_click;
