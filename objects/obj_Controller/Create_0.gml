@@ -39,7 +39,7 @@ global.mining_Angle = 20 + (global.level_angle * 5); // 20 + 레벨 * 5
 
 // 7. 제한 시간 (Time)
 if (!variable_global_exists("level_time")) global.level_time = 0;
-global.game_time_max = 20 + (global.level_time * 2); // 20 + 레벨 * 2 (광산에 들어갈 때 사용됨)
+global.game_time_max = 2 + (global.level_time * 2); // 20 + 레벨 * 2 (광산에 들어갈 때 사용됨)
 
 
 global.game_time = 20;		//노업글시 초기 Mine에서 보낼 수 있는 시간
