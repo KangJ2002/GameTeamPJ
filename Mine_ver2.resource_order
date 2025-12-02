@@ -11,6 +11,9 @@
   "ResourceOrderSettings":[
     {"name":"fnt_Level","order":7,"path":"fonts/fnt_Level/fnt_Level.yy",},
     {"name":"fnt_Shop","order":1,"path":"fonts/fnt_Shop/fnt_Shop.yy",},
+    {"name":"Font4","order":1,"path":"fonts/Font4/Font4.yy",},
+    {"name":"Font5","order":2,"path":"fonts/Font5/Font5.yy",},
+    {"name":"Object24","order":3,"path":"objects/Object24/Object24.yy",},
     {"name":"up_2","order":5,"path":"objects/up_2/up_2.yy",},
     {"name":"up_3","order":6,"path":"objects/up_3/up_3.yy",},
     {"name":"up_level1","order":1,"path":"objects/up_level1/up_level1.yy",},
@@ -39,6 +42,8 @@
     {"name":"spr_Rock6_ver2","order":1,"path":"sprites/spr_Rock6_ver2/spr_Rock6_ver2.yy",},
     {"name":"spr_Rock6","order":9,"path":"sprites/spr_Rock6/spr_Rock6.yy",},
     {"name":"spr_tile","order":2,"path":"sprites/spr_tile/spr_tile.yy",},
+    {"name":"Sprite32","order":3,"path":"sprites/Sprite32/Sprite32.yy",},
+    {"name":"Sprite33","order":2,"path":"sprites/Sprite33/Sprite33.yy",},
     {"name":"tile_0269","order":20,"path":"sprites/tile_0269/tile_0269.yy",},
     {"name":"TileSet1","order":6,"path":"tilesets/TileSet1/TileSet1.yy",},
   ],
