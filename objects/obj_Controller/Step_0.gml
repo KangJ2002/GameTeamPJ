@@ -9,3 +9,9 @@ if(room == room_Mine){
 		}
 	}
 }
+
+
+
+if (keyboard_check_pressed(ord("P"))) {
+    room_goto(room_Shop1);
+}

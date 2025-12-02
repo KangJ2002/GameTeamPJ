@@ -239,8 +239,8 @@
   "maintainGms1Font":false,
   "name":"fnt_Basic",
   "parent":{
-    "name":"mine",
-    "path":"mine.yyp",
+    "name":"Mine_ver2",
+    "path":"Mine_ver2.yyp",
   },
   "pointRounding":0,
   "ranges":[

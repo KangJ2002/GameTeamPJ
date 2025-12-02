@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings":[
     {"name":"Object","order":2,"path":"folders/Object.yy",},
+    {"name":"obj","order":1,"path":"folders/Object/obj.yy",},
     {"name":"Room","order":3,"path":"folders/Room.yy",},
     {"name":"Scripts","order":4,"path":"folders/Scripts.yy",},
     {"name":"Sprite","order":5,"path":"folders/Sprite.yy",},
@@ -8,7 +9,16 @@
     {"name":"Button","order":17,"path":"folders/Sprite/Button.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"fnt_Level","order":7,"path":"fonts/fnt_Level/fnt_Level.yy",},
     {"name":"fnt_Shop","order":1,"path":"fonts/fnt_Shop/fnt_Shop.yy",},
+    {"name":"up_2","order":5,"path":"objects/up_2/up_2.yy",},
+    {"name":"up_3","order":6,"path":"objects/up_3/up_3.yy",},
+    {"name":"up_level1","order":1,"path":"objects/up_level1/up_level1.yy",},
+    {"name":"up_level2","order":2,"path":"objects/up_level2/up_level2.yy",},
+    {"name":"up_level3","order":3,"path":"objects/up_level3/up_level3.yy",},
+    {"name":"up_level4","order":4,"path":"objects/up_level4/up_level4.yy",},
+    {"name":"up_level5","order":7,"path":"objects/up_level5/up_level5.yy",},
+    {"name":"room_Shop1","order":1,"path":"rooms/room_Shop1/room_Shop1.yy",},
     {"name":"ATKDMG","order":1,"path":"sprites/ATKDMG/ATKDMG.yy",},
     {"name":"spr_Background","order":1,"path":"sprites/spr_Background/spr_Background.yy",},
     {"name":"spr_Pickax","order":5,"path":"sprites/spr_Pickax/spr_Pickax.yy",},
