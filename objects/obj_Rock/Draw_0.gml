@@ -8,7 +8,7 @@ var bar_width  = 40;
 var bar_height = 6;
 var bar_margin = 4;
 
-var bar_x = x - bar_width / 2;
+var bar_x = x - bar_width / 2 ;
 var bar_y = y + sprite_height * image_yscale + bar_margin - 20;
 
 // 체력 비율

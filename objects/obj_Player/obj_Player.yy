@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Player",
-    "path":"sprites/spr_Player/spr_Player.yy",
+    "name":"tile_0269",
+    "path":"sprites/tile_0269/tile_0269.yy",
   },
   "spriteMaskId":null,
   "visible":true,

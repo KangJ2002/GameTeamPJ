@@ -2,13 +2,13 @@
 if (instance_exists(obj_Player)) {
     if (obj_Player.image_xscale == 1) {
         // 플레이어가 오른쪽 보는 중
-        x = obj_Player.x + 10;  // 플레이어 오른쪽
-        y = obj_Player.y + 5;
+        x = obj_Player.x;  // 플레이어 오른쪽
+        y = obj_Player.y + 15;
         image_xscale = -1;
     } else {
         // 플레이어가 왼쪽 보는 중
-        x = obj_Player.x - 10;  // 플레이어 왼쪽
-        y = obj_Player.y + 5;
+        x = obj_Player.x;  // 플레이어 왼쪽
+        y = obj_Player.y + 15;
         image_xscale = 1;
     }
 }

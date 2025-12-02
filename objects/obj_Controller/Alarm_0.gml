@@ -16,12 +16,15 @@ if (room == room_Mine) {
                 var _grid_size = 32;
 				var _map_width = 15;
 				var _map_height = 15;
+					
+				var _grid_x = irandom_range(0, _map_width - 1);
+                var _grid_y = irandom_range(0, _map_height - 1);
 
 				var _gx = irandom(_map_width - 1);
 				var _gy = irandom(_map_height - 1);
 
-				var rx = _gx * _grid_size + (_grid_size / 2);
-				var ry = _gy * _grid_size + (_grid_size / 2);
+				var rx = _grid_x * _grid_size + (_grid_size / 2) + 64;
+                var ry = _grid_y * _grid_size + (_grid_size / 2) + 64;
                 
                 // 해당 위치에 obj_Rock이 없을 때만 생성 (충돌 확인)
                 if (instance_position(rx, ry, obj_Rock) == noone) {

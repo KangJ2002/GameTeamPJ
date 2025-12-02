@@ -53,10 +53,10 @@ if (room != room_Intro) {
 	        var _cy = display_get_gui_height() / 2;
         
 	        // 반투명 검은 배경
-	        draw_set_alpha(0.8);
-	        draw_set_color(c_black);
-	        draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), false);
-	        draw_set_alpha(1.0);
+	       // draw_set_alpha(0.8);
+	       // draw_set_color(c_black);
+	       // draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), false);
+	      //  draw_set_alpha(1.0);
 
 			// --- [재화 계산] ---
 			var _original_gold = global.gold_at_start;              // 원래 있던 돈

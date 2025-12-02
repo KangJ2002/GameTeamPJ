@@ -1,7 +1,7 @@
 draw_self();
 
 // 1. 그리기 설정
-draw_set_color(c_lime); 
+draw_set_color(c_red); 
 draw_set_alpha(0.3); // 채워지는 영역이므로 투명도를 낮춥니다.
 
 // 2. 공격 방향 계산
