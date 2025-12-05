@@ -19,7 +19,7 @@ if (!variable_global_exists("max_rock_count")) global.max_rock_count = 25; // �
 
 // 2. 공격 속도 (Mining Speed)
 if (!variable_global_exists("level_atk_spd")) global.level_atk_spd = 0;
-global.mining_Speed = 1.0 + (global.level_atk_spd * 0.2); // 1.0 + 레벨 * 0.2
+global.mining_Speed = 5.0 + (global.level_atk_spd * 0.2); // 1.0 + 레벨 * 0.2
 
 // 3. 이동 속도 (Move Speed)
 if (!variable_global_exists("level_move_spd")) global.level_move_spd = 0;
@@ -27,15 +27,15 @@ global.move_speed = 3 + (global.level_move_spd * 0.5); // 3 + 레벨 * 0.5
 
 // 4. 데미지 (Damage)
 if (!variable_global_exists("level_dmg")) global.level_dmg = 0;
-global.mining_Damage = 1 + (global.level_dmg * 0.5); // 1 + 레벨 * 0.5
+global.mining_Damage = 10 + (global.level_dmg * 0.5); // 1 + 레벨 * 0.5
 
 // 5. 사거리 (Range)
 if (!variable_global_exists("level_range")) global.level_range = 0;
-global.Range_radius = 32 + (global.level_range * 4); // 32 + 레벨 * 4
+global.Range_radius = 100 + (global.level_range * 4); // 32 + 레벨 * 4
 
 // 6. 공격 각도 (Angle)
 if (!variable_global_exists("level_angle")) global.level_angle = 0;
-global.mining_Angle = 20 + (global.level_angle * 5); // 20 + 레벨 * 5
+global.mining_Angle = 100 + (global.level_angle * 5); // 20 + 레벨 * 5
 
 // 7. 제한 시간 (Time)
 if (!variable_global_exists("level_time")) global.level_time = 0;

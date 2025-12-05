@@ -44,6 +44,8 @@
     {"name":"spr_tile","order":2,"path":"sprites/spr_tile/spr_tile.yy",},
     {"name":"Sprite32","order":3,"path":"sprites/Sprite32/Sprite32.yy",},
     {"name":"Sprite33","order":2,"path":"sprites/Sprite33/Sprite33.yy",},
+    {"name":"Sprite34","order":21,"path":"sprites/Sprite34/Sprite34.yy",},
+    {"name":"Sprite35","order":22,"path":"sprites/Sprite35/Sprite35.yy",},
     {"name":"tile_0269","order":20,"path":"sprites/tile_0269/tile_0269.yy",},
     {"name":"TileSet1","order":6,"path":"tilesets/TileSet1/TileSet1.yy",},
   ],
