@@ -1,8 +1,8 @@
 {
   "FolderOrderSettings":[
     {"name":"Object","order":2,"path":"folders/Object.yy",},
-    {"name":"Shop","order":1,"path":"folders/Object/Shop.yy",},
     {"name":"Rock","order":4,"path":"folders/Object/Rock.yy",},
+    {"name":"Shop","order":1,"path":"folders/Object/Shop.yy",},
     {"name":"Room","order":3,"path":"folders/Room.yy",},
     {"name":"Scripts","order":4,"path":"folders/Scripts.yy",},
     {"name":"Sprite","order":5,"path":"folders/Sprite.yy",},
