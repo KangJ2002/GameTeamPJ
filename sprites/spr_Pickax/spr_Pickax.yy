@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprite",
-    "path":"folders/Sprite.yy",
+    "name":"Pickaxe",
+    "path":"folders/Sprite/Pickaxe.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

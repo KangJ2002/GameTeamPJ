@@ -73,7 +73,7 @@ if (mouse_check_button(mb_left) && mining_cooldown_timer <= 0) {
     var _num_hit  = collision_circle_list(
         x, y,
         global.Range_radius,   // 공격 거리
-        obj_Rock,              // 광석 오브젝트
+        obj_Ore_Parent,        // 광석 오브젝트
         false,                 // prec
         true,                  // notme
         _hit_list,             // 결과 리스트
@@ -105,13 +105,60 @@ if (mouse_check_button(mb_left) && mining_cooldown_timer <= 0) {
 
             _target_rock.hp -= global.mining_Damage; // 데미지 적용
 
+			// 1. 곡괭이가 광석의 좌측(-), 우측(+) 어디에 생성될지 결정합니다.
+			//    (광석 중심 x에서 -10 ~ +10 오프셋)
+			var _hit_x_offset = choose(-20, 20); 
+			var _hit_y_offset = -10; // 광석보다 약간 위쪽에 배치
+
+			var _hit_fx = instance_create_layer(
+			    _target_rock.x + _hit_x_offset, 
+			    _target_rock.y + _hit_y_offset, 
+			    "Instances", 
+			    obj_Hit_Effect 
+			);
+
+			// 2. 🆕 _hit_x_offset 값에 따라 곡괭이의 방향을 결정합니다.
+			if (_hit_x_offset < 0) {
+			    // 오프셋이 음수(-10) (광석 좌측 끝 생성)
+			    // ➡️ 우측을 바라보게 (image_xscale = -1)
+			    _hit_fx.image_xscale = -1; 
+    
+			    // 🆕 오른쪽으로 찍는 느낌을 위해 양수 각도(35도) 적용
+			    _hit_fx.image_angle = 35; 
+			} else {
+			    // 오프셋이 양수(+10) (광석 우측 끝 생성)
+			    // ➡️ 좌측을 바라보게 (image_xscale = 1)
+			    _hit_fx.image_xscale = 1; 
+    
+			    // 🆕 왼쪽으로 찍는 느낌을 위해 음수 각도(-35도) 적용
+			    _hit_fx.image_angle = -35
+			}
+
             with (_target_rock) {
                 if (hp <= 0) {
                     var _final_value = rock_value;
-                    global.currency += _final_value; // 재화 획득
-
+					var _earned_currency = floor(_final_value * global.currency_gain_multiplier);
+					
+                    global.currency += _earned_currency; // 재화 획득 
+                    
+                    // 1. 팝업 텍스트 오브젝트 생성
+                    var _popup = instance_create_layer(
+                        x, y - 20, // 광석의 x, y보다 약간 위
+                        "Instances", 
+                        obj_Text_Popup // 1단계에서 생성한 팝업 오브젝트 이름
+                    );
+                    
+                    // 2. 팝업에 표시할 내용 전달
+                    _popup.display_text = "+" + string(_earned_currency);
+                    
+                    // 3. 재화 가치에 따라 팝업 색상 설정
+                    if (_final_value > 1) {
+                        _popup.display_color = c_yellow;  // 은 광석(value > 1)은 아쿠아색
+                    } else {
+                        _popup.display_color = c_yellow; // 돌 광석(value = 1)은 노란색
+                    }
+                    
                     show_debug_message("currency increased to : " + string(global.currency));
-
                     instance_destroy(); // 광석 파괴
                 }
             }

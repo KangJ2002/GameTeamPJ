@@ -45,6 +45,14 @@ if (can_afford) {
             global.rock_max_level++;
             global.max_rock_count = next_stat_value;
             break;
+		case "MINE_UNLOCK": // 새로 추가
+		    global.level_mine_unlock++; // 해금 레벨 증가
+		    break;	
+		case "CURRENCY_GAIN":
+	        global.level_currency_gain++;
+	        global.currency_gain_multiplier = next_stat_value;
+	        break;
+	
     }
 	show_debug_message("✅ " + upgrade_type + " Upgraded to Level " + string(current_level + 1) + "! Cost: " + string(upgrade_cost));
 } else {

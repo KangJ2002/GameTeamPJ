@@ -41,10 +41,27 @@ if (room == room_Mine){
             var ry = _grid_y * _grid_size + (_grid_size / 2) + 64;
            
             if (instance_position(rx, ry, obj_Rock) == noone) {
-                instance_create_layer(rx, ry, "Instances", obj_Rock);
-				_rocks_created++;
+                // 🆕 3-1. 어떤 광물을 생성할지 결정
+		        var _rock_to_create = obj_Rock; // 기본값은 돌
+        
+		        if (global.level_mine_unlock >= 1) {
+		            // Level 1 이상 해금 시: 돌 또는 은을 일정 비율로 결정
+		            var _chance = random(100); // 0부터 99까지의 난수 생성
+            
+		            // 은 광석 스폰 확률 (예: 20%)
+		            if (_chance < 20) { 
+		                _rock_to_create = obj_Silver;
+		            } else {
+		                _rock_to_create = obj_Rock;
+		            }
+            
+		            // TODO: Level 2 해금 시: _chance < 10 (은), _chance < 3 (금) 등으로 확장
+		        }
+        
+		        instance_create_layer(rx, ry, "Instances", _rock_to_create);
+		        _rocks_created++;
 			} 
-			
+				
 		}
 }
 

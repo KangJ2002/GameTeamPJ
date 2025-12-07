@@ -9,6 +9,7 @@ upgrade_type = "MINING_DAMAGE";
 "MINING_ANGLE"   // 공격 각도
 "GAME_TIME"      // 광산 제한 시간
 "ROCK_MAX_COUNT" // 광석 개수 증가
+"MINE_UNLOCK"	 // 광석 해금
 */
 
 
