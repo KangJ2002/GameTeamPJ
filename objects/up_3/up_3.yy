@@ -8,8 +8,8 @@
   "name":"up_3",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj",
-    "path":"folders/Object/obj.yy",
+    "name":"Shop",
+    "path":"folders/Object/Shop.yy",
   },
   "parentObjectId":null,
   "persistent":false,

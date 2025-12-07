@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"up_level3",
+  "%Name":"obj_D_Right_2",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"up_level3",
+  "name":"obj_D_Right_2",
   "overriddenProperties":[],
   "parent":{
     "name":"Shop",
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Sign2",
-    "path":"sprites/spr_Sign2/spr_Sign2.yy",
+    "name":"spr_D_Right",
+    "path":"sprites/spr_D_Right/spr_D_Right.yy",
   },
   "spriteMaskId":null,
   "visible":true,

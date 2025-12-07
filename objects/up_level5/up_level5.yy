@@ -8,8 +8,8 @@
   "name":"up_level5",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj",
-    "path":"folders/Object/obj.yy",
+    "name":"Shop",
+    "path":"folders/Object/Shop.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Sign",
-    "path":"sprites/spr_Sign/spr_Sign.yy",
+    "name":"spr_Sign2",
+    "path":"sprites/spr_Sign2/spr_Sign2.yy",
   },
   "spriteMaskId":null,
   "visible":true,

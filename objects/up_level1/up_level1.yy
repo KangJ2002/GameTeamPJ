@@ -3,13 +3,14 @@
   "%Name":"up_level1",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"up_level1",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj",
-    "path":"folders/Object/obj.yy",
+    "name":"Shop",
+    "path":"folders/Object/Shop.yy",
   },
   "parentObjectId":null,
   "persistent":false,
