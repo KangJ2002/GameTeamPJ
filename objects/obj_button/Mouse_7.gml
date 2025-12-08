@@ -54,3 +54,5 @@ if (can_afford) {
 } else {
     show_debug_message("❌ Not enough gold. Need: " + string(upgrade_cost) + " gold.");
 }
+
+audio_play_sound(ui, 1, false);

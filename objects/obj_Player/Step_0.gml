@@ -62,6 +62,7 @@ if (mouse_check_button(mb_left) && mining_cooldown_timer <= 0) {
             // 필요 시 애니메이션도 줄 수 있음:
             // image_index = 0;
             // image_speed = 1;
+			audio_play_sound(attack, 1, false)
         }
     }
 
