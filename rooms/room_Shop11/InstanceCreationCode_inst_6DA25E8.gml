@@ -1,0 +1,1 @@
+upgrade_type = "MINE_UNLOCK"

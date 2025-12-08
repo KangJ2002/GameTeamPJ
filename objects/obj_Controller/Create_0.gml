@@ -6,7 +6,7 @@ if (instance_number(obj_Controller) > 1) {
     exit;
 }
 
-
+end_buttons_created = false;
 
 // 아직 전역 곡괭이 정보가 없다면 초기화
 if (!variable_global_exists("current_pickaxe")) {
@@ -20,10 +20,6 @@ if (!variable_global_exists("max_rock_count")) global.max_rock_count = 25; // �
 // 2. 공격 속도 (Mining Speed)
 if (!variable_global_exists("level_atk_spd")) global.level_atk_spd = 0;
 global.mining_Speed = 2.0 + (global.level_atk_spd * 0.2); // 1.0 + 레벨 * 0.2
-
-// 3. 이동 속도 (Move Speed)
-if (!variable_global_exists("level_move_spd")) global.level_move_spd = 0;
-global.move_speed = 3 + (global.level_move_spd * 0.5); // 3 + 레벨 * 0.5
 
 // 4. 데미지 (Damage)
 if (!variable_global_exists("level_dmg")) global.level_dmg = 0;
@@ -39,17 +35,38 @@ global.mining_Angle = 40 + (global.level_angle * 5); // 20 + 레벨 * 5
 
 // 7. 제한 시간 (Time)
 if (!variable_global_exists("level_time")) global.level_time = 0;
-global.game_time_max = 20 + (global.level_time * 2); // 20 + 레벨 * 2 (광산에 들어갈 때 사용됨)
+global.game_time_max = 5 + (global.level_time * 2); // 20 + 레벨 * 2 (광산에 들어갈 때 사용됨)
 
 // 8. 광물 해금 레벨 (Mine Unlock Level)
 if (!variable_global_exists("level_mine_unlock")) {
-    global.level_mine_unlock = 3; // 0: 돌, 1: 은 해금, 2: 금 해금 등 3: diamond
+    global.level_mine_unlock = 0; // 0: 돌, 1: 은 해금, 2: 금 해금 등 3: diamond
 }
+
 
 // 9. 재화 배율 획득
 if (!variable_global_exists("level_currency_gain")) global.level_currency_gain = 0;
-global.currency_gain_multiplier = 1.0 + (global.level_currency_gain);
+global.currency_gain_multiplier = 100000.0 + (global.level_currency_gain);
 
+// 10. 광석 재생성 주기 (Rock Regen Cooldown)
+if (!variable_global_exists("level_regen_cooldown")) global.level_regen_cooldown = 0;
+
+// 툴팁 변수 초기화
+if (!variable_global_exists("tooltip_title")) global.tooltip_title = "";
+global.tooltip_desc = "";
+global.tooltip_cost = "";
+global.tooltip_value_current = "";
+global.tooltip_value_next = "";
+
+// 기본 주기는 60 프레임 (1초)으로 설정합니다. (room_speed가 60이라고 가정)
+var _base_cooldown_max = 60; 
+
+// 레벨당 5 프레임(약 0.08초)씩 주기가 단축된다고 가정합니다.
+var _cooldown_reduction_per_level = 5;
+
+global.rock_regen_cooldown_max = _base_cooldown_max - (global.level_regen_cooldown * _cooldown_reduction_per_level);
+
+// 최소 주기는 10프레임(약 0.16초) 미만으로 내려가지 않도록 제한합니다.
+if (global.rock_regen_cooldown_max < 10) global.rock_regen_cooldown_max = 10;
 
 global.game_time = 20;		//노업글시 초기 Mine에서 보낼 수 있는 시간
 global.is_playing = false;	//현재 채굴 중인가?

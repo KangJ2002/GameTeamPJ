@@ -1,1 +1,0 @@
-upgrade_type = "RANGE_RADIUS";

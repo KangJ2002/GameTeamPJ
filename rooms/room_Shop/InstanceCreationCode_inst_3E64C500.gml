@@ -1,1 +1,0 @@
-upgrade_type = "MINING_ANGLE";

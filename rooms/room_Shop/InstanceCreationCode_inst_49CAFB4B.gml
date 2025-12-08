@@ -1,1 +1,0 @@
-upgrade_type = "ROCK_MAX_COUNT";

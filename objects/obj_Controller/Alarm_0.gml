@@ -74,7 +74,8 @@ if (room == room_Mine) {
         }
         
         // 3. 재생성 성공 여부와 관계없이 다음 알람을 설정하여 루프를 이어갑니다.
-        alarm[0] = 20; // 3초 대기 (쿨타임)
+        alarm[0] = global.rock_regen_cooldown_max; // 대기 (쿨타임)
+		var max_count = global.max_rock_count;
         
     } 
     // global.is_playing == false 이면, 다음 알람을 설정하지 않고 재생성 로직을 완전히 멈춥니다.

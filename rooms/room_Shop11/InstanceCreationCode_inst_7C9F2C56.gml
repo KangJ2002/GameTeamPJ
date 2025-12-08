@@ -1,0 +1,1 @@
+upgrade_type = "CURRENCY_GAIN"

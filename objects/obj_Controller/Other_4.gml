@@ -1,7 +1,9 @@
 if (room == room_Mine){
-	show_debug_message("Enter Mine! Now Currncy : " + string(global.currency));
+	if (variable_instance_exists(id, "end_buttons_created")) {
+        end_buttons_created = false;
+    }
 	
-	global.is_playing = true;
+	global.is_playing = false;
 	global.game_time = global.game_time_max;
 	global.gold_at_start = global.currency;
 	
@@ -12,6 +14,8 @@ if (room == room_Mine){
 	
 	
 	with (obj_Rock) instance_destroy();
+alarm[0] = -1; // 광석 재생성 알람 비활성화
+alarm[1] = 3 * room_speed;
 	
 	var _rock_count = global.max_rock_count; 
 	var _rocks_created = 0;

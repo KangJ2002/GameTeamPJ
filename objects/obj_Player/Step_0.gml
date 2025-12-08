@@ -22,8 +22,8 @@ if (room == room_Mine) {
         my /= len;
     }
 
-    x += mx * global.move_speed;
-    y += my * global.move_speed;
+    x += mx * 3;
+    y += my * 3;
 }
 
 // 2. 마우스 위치 기준으로 좌우 반전
