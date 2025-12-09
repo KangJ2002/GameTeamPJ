@@ -19,11 +19,11 @@ if (!variable_global_exists("max_rock_count")) global.max_rock_count = 25; // �
 
 // 2. 공격 속도 (Mining Speed)
 if (!variable_global_exists("level_atk_spd")) global.level_atk_spd = 0;
-global.mining_Speed = 2.0 + (global.level_atk_spd * 0.2); // 1.0 + 레벨 * 0.2
+global.mining_Speed = 1.0 + (global.level_atk_spd * 0.2); // 1.0 + 레벨 * 0.2
 
 // 4. 데미지 (Damage)
 if (!variable_global_exists("level_dmg")) global.level_dmg = 0;
-global.mining_Damage = 10 + (global.level_dmg * 0.5); // 1 + 레벨 * 0.5
+global.mining_Damage = 1 + (global.level_dmg * 0.5); // 1 + 레벨 * 0.5
 
 // 5. 사거리 (Range)
 if (!variable_global_exists("level_range")) global.level_range = 0;
@@ -35,7 +35,7 @@ global.mining_Angle = 40 + (global.level_angle * 5); // 20 + 레벨 * 5
 
 // 7. 제한 시간 (Time)
 if (!variable_global_exists("level_time")) global.level_time = 0;
-global.game_time_max = 5 + (global.level_time * 2); // 20 + 레벨 * 2 (광산에 들어갈 때 사용됨)
+global.game_time_max = 20 + (global.level_time * 2); // 20 + 레벨 * 2 (광산에 들어갈 때 사용됨)
 
 // 8. 광물 해금 레벨 (Mine Unlock Level)
 if (!variable_global_exists("level_mine_unlock")) {
@@ -45,7 +45,7 @@ if (!variable_global_exists("level_mine_unlock")) {
 
 // 9. 재화 배율 획득
 if (!variable_global_exists("level_currency_gain")) global.level_currency_gain = 0;
-global.currency_gain_multiplier = 100000.0 + (global.level_currency_gain);
+global.currency_gain_multiplier = 1.0 + (global.level_currency_gain);
 
 // 10. 광석 재생성 주기 (Rock Regen Cooldown)
 if (!variable_global_exists("level_regen_cooldown")) global.level_regen_cooldown = 0;

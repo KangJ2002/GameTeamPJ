@@ -6,8 +6,8 @@
   "name":"obj_money",
   "overriddenProperties":[],
   "parent":{
-    "name":"Object",
-    "path":"folders/Object.yy",
+    "name":"Icon",
+    "path":"folders/Object/Icon.yy",
   },
   "parentObjectId":null,
   "persistent":false,

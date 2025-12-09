@@ -12,8 +12,8 @@
   "out_tilehborder":0,
   "out_tilevborder":0,
   "parent":{
-    "name":"Mine_ver2",
-    "path":"Mine_ver2.yyp",
+    "name":"BackGrounds",
+    "path":"folders/Sprite/BackGrounds.yy",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",

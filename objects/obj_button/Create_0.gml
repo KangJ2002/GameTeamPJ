@@ -18,9 +18,4 @@ switch (upgrade_type) {
     case "REGEN_COOLDOWN": description_text = "광석의 재생성 주기를 단축시켜 광물 공급을 빠르게 합니다."; break;
     case "CURRENCY_GAIN":  description_text = "광석 채굴 시 획득하는 재화의 양을 증가시킵니다."; break;
     case "MINE_UNLOCK":    description_text = "더 높은 가치를 가진 광물을 해금합니다."; break;
-
-    // 1단계에서 upgrade_type이 ""일 경우(설정 누락)를 대비한 안전 장치
-    default: 
-        description_text = "⚠️ 업그레이드 타입이 설정되지 않았습니다. (Type: " + upgrade_type + ")"; 
-        break;
 }

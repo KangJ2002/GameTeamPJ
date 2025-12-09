@@ -50,9 +50,6 @@ if (can_afford) {
 	        break;
 	
     }
-	show_debug_message("✅ " + upgrade_type + " Upgraded to Level " + string(current_level + 1) + "! Cost: " + string(upgrade_cost));
-} else {
-    show_debug_message("❌ Not enough gold. Need: " + string(upgrade_cost) + " gold.");
 }
 
 audio_play_sound(ui, 1, false);

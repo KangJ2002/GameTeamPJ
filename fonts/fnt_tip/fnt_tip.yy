@@ -11698,8 +11698,8 @@
   "maintainGms1Font":false,
   "name":"fnt_tip",
   "parent":{
-    "name":"Mine_ver2",
-    "path":"Mine_ver2.yyp",
+    "name":"Font",
+    "path":"folders/Font.yy",
   },
   "pointRounding":0,
   "ranges":[

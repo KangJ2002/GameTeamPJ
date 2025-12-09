@@ -49,8 +49,6 @@ if (mouse_check_button(mb_left) && mining_cooldown_timer <= 0) {
     var _pickaxe_obj = noone;
     if (global.current_pickaxe == 1) {
         _pickaxe_obj = obj_Pickaxe1;
-    } else if (global.current_pickaxe == 4) {
-        _pickaxe_obj = obj_Pickaxe4;
     }
 
     // 4-3. 곡괭이 모션 시작 (한 번 휙 숙이기)

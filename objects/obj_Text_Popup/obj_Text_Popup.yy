@@ -10,8 +10,8 @@
   "name":"obj_Text_Popup",
   "overriddenProperties":[],
   "parent":{
-    "name":"etc",
-    "path":"folders/Object/etc.yy",
+    "name":"Controller",
+    "path":"folders/Object/Controller.yy",
   },
   "parentObjectId":null,
   "persistent":false,

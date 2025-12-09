@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"attack",
   "parent":{
-    "name":"Mine_ver2",
-    "path":"Mine_ver2.yyp",
+    "name":"Sound",
+    "path":"folders/Sound.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

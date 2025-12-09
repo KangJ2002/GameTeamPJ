@@ -73,7 +73,7 @@ if (global.tooltip_title != "") {
     draw_set_halign(fa_left); // 왼쪽 정렬로 변경
     draw_set_valign(fa_top);
     var _left_x = _center_x - _box_w/2 + 20; // 좌측 여백 20
-    var _right_x = _center_x + _box_w/2 - 20; // 우측 여백 20
+    var _right_x = _center_x + _box_w/2 - 100; // 우측 여백 20
     
     // 비용 (왼쪽)
     draw_set_color(c_yellow);
@@ -81,18 +81,17 @@ if (global.tooltip_title != "") {
     draw_text(_left_x + 60, _top_y + 10 + _line_h * 2, global.tooltip_cost);
     
     // 수치 (오른쪽)
-    draw_set_halign(fa_right); // 우측 정렬로 변경
-    draw_set_color(c_aqua);
-    draw_text(_right_x, _top_y + 10 + _line_h * 2, "-> " + global.tooltip_value_next);
-    draw_set_color(c_white);
-    draw_text(_right_x - 50, _top_y + 10 + _line_h * 2, "L " + global.tooltip_value_current);
+	
+	var _value_string = string(global.tooltip_value_current) + " -> " + string(global.tooltip_value_next);
+	draw_set_color(c_aqua);
+	draw_text(_right_x, _top_y + 10 + _line_h * 2, _value_string);
     
     // 툴팁이 켜져 있을 때만 그리는 로직 끝
 }
 
 
 // ----------------------------------------------------
-// 1. 재화 표시 (N + M 형식 적용)
+// 1. 재화 표시
 // ----------------------------------------------------
 if (room != room_Intro) {
 	draw_set_halign(fa_left); // 추가: 정렬을 좌측 정렬로 재설정
@@ -146,12 +145,6 @@ if (room != room_Intro) {
 		        // 화면 중앙 계산
 		        var _cx = display_get_gui_width() / 2;
 		        var _cy = display_get_gui_height() / 2;
-        
-		        // 반투명 검은 배경
-		       // draw_set_alpha(0.8);
-		       // draw_set_color(c_black);
-		       // draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), false);
-		      //  draw_set_alpha(1.0);
 
 				// --- [재화 계산] ---
 				var _original_gold = global.gold_at_start;              // 원래 있던 돈
