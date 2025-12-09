@@ -86,3 +86,5 @@ global.earned_currency = 0; //이번 판에 얻은 재화(결과창 용)
 if(!variable_global_exists("currency")){
 	global.currency = 0;
 	}
+
+timeup_sfx_played = false;    // TIME UP 사운드 재생 여부
