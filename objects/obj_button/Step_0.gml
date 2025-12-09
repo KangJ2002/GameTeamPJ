@@ -14,11 +14,39 @@ switch (upgrade_type) {
 }
 
 var _next_level = current_level + 1;
-if (upgrade_type == "MINE_UNLOCK") { //MINE_UNLOCK의 MAX_LEVEL
-    max_level = 3; 
-}
-if (upgrade_type == "ROCK_MAX_COUNT") {  //ROCK_COUNT의 MAX_LEVEL
-    max_level = 42; 
+// ----------------------------------------------------
+// 💡 최대 레벨(MAX_LEVEL) 설정: 이 부분을 추가 및 수정합니다.
+// ----------------------------------------------------
+max_level = 500; // 기본값
+
+switch (upgrade_type) {
+    case "MINE_UNLOCK":
+        max_level = 3;
+        break;
+    case "ROCK_MAX_COUNT":
+        max_level = 42;
+        break;
+    case "MINING_DAMAGE":
+        max_level = 150;
+        break;
+    case "MINING_SPEED":
+        max_level = 80;
+        break;
+    case "RANGE_RADIUS":
+        max_level = 15; 
+        break;
+    case "MINING_ANGLE":
+        max_level = 16;
+        break;
+    case "GAME_TIME":
+        max_level = 5; 
+        break;
+    case "CURRENCY_GAIN":
+        max_level = 50; 
+        break;
+    case "REGEN_COOLDOWN":
+        max_level = 10; 
+        break;
 }
 
 is_max_level = (current_level >= max_level);
@@ -42,72 +70,66 @@ if (upgrade_type == "MINE_UNLOCK") {
     }
 }
 
-upgrade_cost = 5 * (_next_level * _next_level); //업그레이드 비용 (조정필요)
+upgrade_cost = 0;
 
 switch (upgrade_type) {
     case "MINING_DAMAGE":  
-        next_stat_value = 1 + (_next_level * 3); // 1씩 증가
+        next_stat_value = 1 + (_next_level * 1); 
+        upgrade_cost = round(5 * power(1.15, _next_level - 1)); // 기본값 5, 1.15 지수형식증가 최종3000만정도 소비
         break;
+        
     case "MINING_SPEED":   
-        next_stat_value = 1.0 + (_next_level * 0.5); // 0.2씩 증가
+        next_stat_value = 1.0 + (_next_level * 0.1); 
+        upgrade_cost = round(5 * power(1.2, _next_level - 1));
         break;
+        
     case "RANGE_RADIUS":   
-        next_stat_value = 60 + (_next_level * 20); // 4씩 증가
+        next_stat_value = 60 + (_next_level * 20); 
+        upgrade_cost = round(100 * power(1.9, _next_level - 1));
         break;
+        
     case "MINING_ANGLE":   
-        next_stat_value = 40 + (_next_level * 20); // 5씩 증가
+        next_stat_value = 40 + (_next_level * 20); 
+        upgrade_cost = round(70 * power(1.7, _next_level - 1));
         break;
+        
     case "GAME_TIME":      
-        next_stat_value = 20 + (_next_level * 2); // 2초씩 증가
+        next_stat_value = 20 + (_next_level * 2); 
+        upgrade_cost = round(20 * power(1.7, _next_level - 1));
         break;
+        
     case "ROCK_MAX_COUNT": 
-		var _base_count = 25; // 기본값 25
-        var _per_level_increase = 3; // 레벨당 3개씩 고정 증가
-		next_stat_value = _base_count + (_next_level * _per_level_increase);
-		var _max_limit = 150;
+        var _base_count = 25; 
+        var _per_level_increase = 3; 
+        next_stat_value = _base_count + (_next_level * _per_level_increase);
+        var _max_limit = 150;
         if (next_stat_value > _max_limit) {
             next_stat_value = _max_limit;
         }
-		upgrade_cost = 10 * (_next_level * _next_level);
+        upgrade_cost = round( 70 * power(1.20, _next_level - 1));
         break;
-		
-	case "MINE_UNLOCK":
-        var _next_mine_type_name = "";
-        if (_next_level == 1) {
-            _next_mine_type_name = "Silver Mine"; // Level 1 해금: 은 광석
-        } else if (_next_level == 2) {
-            _next_mine_type_name = "Gold Mine";   // Level 2 해금: 금 광석
-        } else if (_next_level == 3) {
-             _next_mine_type_name = "Diamond Mine";// Diamond
-        }
-		// 다음 스탯 값 대신 이 문자열을 저장 (Draw 이벤트에서 사용)
-        next_stat_value_string = _next_mine_type_name; 
         
-        // MINE_UNLOCK의 비용은 다른 스탯보다 비싸게 설정할 수 있습니다.
-		next_stat_value = 0; // 더미 값 0 할당
-        upgrade_cost = 50 * _next_level; 
-        break;	
-		
-	// 🆕 재화 획득 증가 (CURRENCY_GAIN) 추가
-    case "CURRENCY_GAIN":   
-        // 0.2씩 증가하므로, 다음 레벨 값은 1.0 + (다음 레벨 * 0.2)
-        next_stat_value = 1.0 + (_next_level); 
+    case "MINE_UNLOCK":
+        next_stat_value = 0; 
+        upgrade_cost = round(500 * power(20 ,_next_level - 1)); 
+        break;    
+        
+    case "CURRENCY_GAIN":  
+        next_stat_value = 1.0 + (_next_level * 1); 
+        upgrade_cost = round(30 * power(1.317, _next_level - 1));
         break;
-		
-	case "REGEN_COOLDOWN":   
-        var _base_cooldown = 60; // 기본 60프레임
-        var _reduction = 5;      // 레벨당 5프레임 감소
         
+    case "REGEN_COOLDOWN": 
+        var _base_cooldown = 60; 
+        var _reduction = 5;  
         next_stat_value = _base_cooldown - (_next_level * _reduction);
-        
-        // 최소값 10프레임 제한을 표시
         if (next_stat_value < 10) next_stat_value = 10;
-        
+        upgrade_cost = round( 150 * power(1.8 , _next_level - 1));
         break;
-	default:
-        // "UNASSIGNED" 또는 정의되지 않은 타입이 들어올 경우
-        next_stat_value = 0; // next_stat_value를 0으로 안전하게 설정합니다.
-        // 다음 스탯 값은 0이 되고, 툴팁에 "N/A"나 "0"이 표시될 것입니다.
+        
+    default:
+        next_stat_value = 0; 
+        upgrade_cost = 0;
         break;
 }
 
@@ -184,17 +206,36 @@ switch (upgrade_type) {
     if (is_max_level) {
         global.tooltip_cost = "Max Level";
         
-        // 💡 수정 1: 현재 레벨이 0일 때 0이 아닌 1로 표시되게 하려면, 여기서 +1을 하거나
-        //           레벨(0)을 그대로 표시합니다. (요청대로 '0 -> 1'을 위해 레벨 0을 그대로 사용)
-        global.tooltip_value_current = string_format(_current_stat_value, 0, _decimals); 
-        global.tooltip_value_next = "MAX";
+        // 💡 수정 1: 현재 수치 할당 (MAX 레벨)
+        if (_is_mine_unlock) {
+             // MINE_UNLOCK은 '레벨 + 1' 값을 문자로 표시
+             global.tooltip_value_current = string(_current_stat_value); 
+        } else {
+             // 나머지 스탯은 포맷된 수치 사용
+             global.tooltip_value_current = string_format(_current_stat_value, 0, _decimals); 
+        }
+        
+global.tooltip_value_next = "MAX";
     } else {
         global.tooltip_cost = string(upgrade_cost);
         
-        // 💡 수정 2: 현재 수치 할당 (MINE_UNLOCK 포함하여 모든 업그레이드를 숫자로 표시)
-        global.tooltip_value_current = string_format(_current_stat_value, 0, _decimals);
+        // 💡 수정 2: 현재 수치 할당 (업그레이드 가능)
+        if (_is_mine_unlock) {
+            // MINE_UNLOCK은 '레벨 + 1' 값을 문자로 표시
+            global.tooltip_value_current = string(_current_stat_value);
+        } else {
+            // 나머지 스탯은 포맷된 수치 사용
+            global.tooltip_value_current = string_format(_current_stat_value, 0, _decimals);
+        }
         
-        // 💡 수정 3: 다음 수치 할당 (MINE_UNLOCK은 _current_stat_value가 레벨이므로 next_stat_value는 다음 레벨 값과 동일)
-        global.tooltip_value_next = string_format(next_stat_value, 0, _next_decimals); 
-    }
+        // 💡 수정 3: 다음 수치 할당
+        if (_is_mine_unlock) {
+            // 다음 레벨 + 1을 문자로 표시
+            var _next_level_display = _next_level + 1; 
+            global.tooltip_value_next = string(_next_level_display);
+        } else {
+            // 나머지 스탯에 대한 다음 수치 할당
+            global.tooltip_value_next = string_format(next_stat_value, 0, _next_decimals);
+        }
+	}
 }

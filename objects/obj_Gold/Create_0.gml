@@ -1,3 +1,3 @@
-hp_max = 30;
+hp_max = 400;
 hp = hp_max;
-rock_value = 10;
+rock_value = 140;

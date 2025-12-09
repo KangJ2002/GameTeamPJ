@@ -34,27 +34,27 @@ if (room == room_Mine) {
 
                     // 🆕 2. 광물 해금 레벨을 확인하고 확률적으로 상위 광물을 선택합니다.
                     //     (더 희귀한 광물부터 체크하여 확률을 제어합니다.)
-				    var _chance = random(100); // 0부터 99까지의 난수 (확률 계산용)
+				    var _chance = irandom_range(0, 99); // 0부터 99까지의 난수 (확률 계산용)
 
                     if (global.level_mine_unlock >= 3) {
                         // Level 3 해금: obj_Diamond, obj_Gold, obj_Silver 스폰 가능
-                        if (_chance < 5) { 
+                        if (_chance < 15) { 
                             _rock_to_create = obj_Diamond; // 5% 확률
-                        } else if (_chance < 15) { 
+                        } else if (_chance < 45) { 
                             _rock_to_create = obj_Gold;    // 10% 확률 (5% ~ 14%)
-                        } else if (_chance < 35) { 
+                        } else if (_chance < 90) { 
                             _rock_to_create = obj_Silver;  // 20% 확률 (15% ~ 34%)
                         }
                     } else if (global.level_mine_unlock >= 2) {
                         // Level 2 해금: obj_Gold, obj_Silver 스폰 가능
-                        if (_chance < 10) { 
+                        if (_chance < 40) { 
                             _rock_to_create = obj_Gold;    // 10% 확률
-                        } else if (_chance < 30) { 
+                        } else if (_chance < 90) { 
                             _rock_to_create = obj_Silver;  // 20% 확률 (10% ~ 29%)
                         }
                     } else if (global.level_mine_unlock >= 1) {
                         // Level 1 해금: obj_Silver 스폰 가능
-                        if (_chance < 20) { 
+                        if (_chance < 90) { 
                             _rock_to_create = obj_Silver;  // 20% 확률
                         }
                     }
@@ -75,7 +75,7 @@ if (room == room_Mine) {
         
         // 3. 재생성 성공 여부와 관계없이 다음 알람을 설정하여 루프를 이어갑니다.
         alarm[0] = global.rock_regen_cooldown_max; // 대기 (쿨타임)
-		var max_count = global.max_rock_count;
+
         
     } 
     // global.is_playing == false 이면, 다음 알람을 설정하지 않고 재생성 로직을 완전히 멈춥니다.

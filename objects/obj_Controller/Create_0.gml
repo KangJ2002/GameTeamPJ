@@ -1,3 +1,14 @@
+
+var _bgm = snd_Background;
+
+if (!audio_is_playing(_bgm)){
+	global.bgm_instance_id = audio_play_sound(_bgm, 0, true, 0.9);
+}
+
+if (instance_number(object_index) > 1) {
+    instance_destroy();
+}
+
 alarm[0] = 60;
 global.currency = 0;
 // 만약 이 오브젝트(obj_Controller)가 이미 1개보다 많이 있다면?
@@ -45,7 +56,7 @@ if (!variable_global_exists("level_mine_unlock")) {
 
 // 9. 재화 배율 획득
 if (!variable_global_exists("level_currency_gain")) global.level_currency_gain = 0;
-global.currency_gain_multiplier = 1.0 + (global.level_currency_gain);
+global.currency_gain_multiplier = 100000000.0 + (global.level_currency_gain);
 
 // 10. 광석 재생성 주기 (Rock Regen Cooldown)
 if (!variable_global_exists("level_regen_cooldown")) global.level_regen_cooldown = 0;

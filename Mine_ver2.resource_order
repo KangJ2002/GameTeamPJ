@@ -2,9 +2,9 @@
   "FolderOrderSettings":[
     {"name":"Font","order":15,"path":"folders/Font.yy",},
     {"name":"Object","order":2,"path":"folders/Object.yy",},
-    {"name":"Player","order":7,"path":"folders/Object/Player.yy",},
     {"name":"Controller","order":10,"path":"folders/Object/Controller.yy",},
     {"name":"Icon","order":8,"path":"folders/Object/Icon.yy",},
+    {"name":"Player","order":7,"path":"folders/Object/Player.yy",},
     {"name":"Rock","order":4,"path":"folders/Object/Rock.yy",},
     {"name":"Room","order":3,"path":"folders/Room.yy",},
     {"name":"Sound","order":14,"path":"folders/Sound.yy",},
@@ -39,6 +39,7 @@
     {"name":"Object46","order":6,"path":"objects/Object46/Object46.yy",},
     {"name":"room_Shop11","order":4,"path":"rooms/room_Shop11/room_Shop11.yy",},
     {"name":"attack","order":2,"path":"sounds/attack/attack.yy",},
+    {"name":"snd_Background","order":3,"path":"sounds/snd_Background/snd_Background.yy",},
     {"name":"ui","order":1,"path":"sounds/ui/ui.yy",},
     {"name":"Angle","order":4,"path":"sprites/Angle/Angle.yy",},
     {"name":"attack_range","order":5,"path":"sprites/attack_range/attack_range.yy",},

@@ -1,1 +1,1 @@
-audio_play_sound(sound_rock, 1, false);
+audio_play_sound(sound_rock, 1, false, 0.3);

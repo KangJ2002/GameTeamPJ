@@ -44,6 +44,8 @@ if (mouse_check_button(mb_left) && mining_cooldown_timer <= 0) {
     // 4-1. 쿨타임 재설정
     mining_cooldown_timer = mining_cooldown_max;
     show_debug_message(">>>공 격 실 행 됨 (원뿔형)<<< ");
+	
+	audio_play_sound(attack, 1, false, 0.3)
 
     // 4-2. 현재 장착된 곡괭이 오브젝트 결정
     var _pickaxe_obj = noone;
@@ -60,7 +62,7 @@ if (mouse_check_button(mb_left) && mining_cooldown_timer <= 0) {
             // 필요 시 애니메이션도 줄 수 있음:
             // image_index = 0;
             // image_speed = 1;
-			audio_play_sound(attack, 1, false)
+
         }
     }
 
