@@ -56,7 +56,7 @@ if (!variable_global_exists("level_mine_unlock")) {
 
 // 9. 재화 배율 획득
 if (!variable_global_exists("level_currency_gain")) global.level_currency_gain = 0;
-global.currency_gain_multiplier = 100000000.0 + (global.level_currency_gain);
+global.currency_gain_multiplier = 1.0 + (global.level_currency_gain);
 
 // 10. 광석 재생성 주기 (Rock Regen Cooldown)
 if (!variable_global_exists("level_regen_cooldown")) global.level_regen_cooldown = 0;
