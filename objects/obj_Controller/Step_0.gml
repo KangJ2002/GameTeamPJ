@@ -18,3 +18,20 @@ if(room == room_Mine){
         }
 	}
 }
+
+if (room == room_Mine && global.is_playing == false && alarm[1] > 0) {
+    // 현재 남은 초 계산 (Draw GUI에서 쓰는 것과 동일)
+    var _countdown_sec = ceil(alarm[1] / room_speed);
+
+    // 이전 값과 다르면 -> 숫자가 바뀌는 순간
+    if (_countdown_sec != prev_countdown_sec) {
+        // 🔊 여기서 효과음 재생
+        audio_play_sound(snd_321, 1, false);
+
+        // 이전 값 갱신
+        prev_countdown_sec = _countdown_sec;
+    }
+} else {
+    // 카운트다운이 아닌 상태일 때는 초기화(선택 사항)
+    prev_countdown_sec = -1;
+}

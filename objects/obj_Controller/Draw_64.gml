@@ -136,70 +136,72 @@ if (room != room_Intro) {
 	    draw_text(10, 40, "Time : " + string(ceil(global.game_time)));
     
 	    // 3. 결과창 표시 (시간이 끝났을 때)
-	    if (global.is_playing == false && global.game_time <= 0) {
-			if (alarm[1] <= 0) { 
+if (global.is_playing == false && global.game_time <= 0) {
+    if (alarm[1] <= 0) { 
         
-	        var _cx = display_get_gui_width() / 2;
-	        var _cy = display_get_gui_height() / 2;
-        
-		        // 화면 중앙 계산
-		        var _cx = display_get_gui_width() / 2;
-		        var _cy = display_get_gui_height() / 2;
+        // 🔊 TIME UP! 사운드: 아직 안 재생했다면 이 순간에 한 번만 재생
+        if (!timeup_sfx_played) {
+            audio_play_sound(snd_timeup, 1, false); // snd_timeup은 실제 사운드 이름으로
+            timeup_sfx_played = true;
+        }
 
-				// --- [재화 계산] ---
-				var _original_gold = global.gold_at_start;              // 원래 있던 돈
-				var _current_gold  = global.currency;                   // 현재 총 돈
-				var _earned_gold   = _current_gold - _original_gold;    // 이번 판에 번 돈
+        var _cx = display_get_gui_width() / 2;
+        var _cy = display_get_gui_height() / 2;
+        
+        // 화면 중앙 계산 (이미 있으니 중복 하나는 지워도 됨)
+        _cx = display_get_gui_width() / 2;
+        _cy = display_get_gui_height() / 2;
+
+        // --- [재화 계산] ---
+        var _original_gold = global.gold_at_start;              
+        var _current_gold  = global.currency;                   
+        var _earned_gold   = _current_gold - _original_gold;    
     
-				// --- [텍스트 그리기] ---
-				draw_set_halign(fa_center);
+        // --- [텍스트 그리기] ---
+        draw_set_halign(fa_center);
     
-				// 1. 타이틀
-				draw_set_color(c_white);
-				draw_set_font(fnt_tip); // 폰트가 있다면 설정
-				draw_text_transformed(_cx, _cy - 100, "TIME UP!", 3, 3, 0); // 좀 더 크게 표시
+        // 1. 타이틀
+        draw_set_color(c_white);
+        draw_set_font(fnt_tip);
+        draw_text_transformed(_cx, _cy - 100, "TIME UP!", 3, 3, 0);
     
-				// 2. 재화 정산 내역 표시
-				var _line_height = 30; // 줄 간격
-				var _start_y = _cy - 20;
+        // 2. 재화 정산 내역 표시
+        var _line_height = 30;
+        var _start_y = _cy - 20;
     
-				// (1) 기존 재화
-				draw_set_color(c_ltgray); // 밝은 회색
-				draw_text(_cx, _start_y, "Original Gold : " + string(int64(_original_gold)));
+        draw_set_color(c_ltgray);
+        draw_text(_cx, _start_y, "Original Gold : " + string(int64(_original_gold)));
     
-				// (2) 획득한 재화 (강조)
-				draw_set_color(c_lime); // 형광 초록색
-				draw_text(_cx, _start_y + _line_height, "Earned : + " + string(int64(_earned_gold)));
+        draw_set_color(c_lime);
+        draw_text(_cx, _start_y + _line_height, "Earned : + " + string(int64(_earned_gold)));
     
-				// (3) 구분선 (------)
-				draw_set_color(c_white);
-				draw_text(_cx, _start_y + _line_height * 2, "------------------");
+        draw_set_color(c_white);
+        draw_text(_cx, _start_y + _line_height * 2, "------------------");
     
-				// (4) 최종 합계
-				draw_set_color(c_yellow); // 노란색
-				draw_text(_cx, _start_y + _line_height * 3, "Total Gold : " + string(int64(_current_gold)));
+        draw_set_color(c_yellow);
+        draw_text(_cx, _start_y + _line_height * 3, "Total Gold : " + string(int64(_current_gold)));
 				
-				if (end_buttons_created == false) {
-			        var _cx = display_get_gui_width() / 2;
-			        var _cy = display_get_gui_height() / 2;
+        if (end_buttons_created == false) {
+            var _cx = display_get_gui_width() / 2;
+            var _cy = display_get_gui_height() / 2;
         
-			        var _btn_y_offset = -60;
+            var _btn_y_offset = -60;
 
-			        // 1. '다시하기' 버튼 생성
-			        var _btn_retry = instance_create_layer(_cx - 150, _cy + _btn_y_offset, "Instances", obj_longButton);
-			        _btn_retry.button_type = "RETRY"; // 💡 타입 설정
-			        _btn_retry.button_text = "다시하기"; // 텍스트 설정
-					_btn_retry.depth = -1000;
+            // 1. '다시하기' 버튼 생성
+            var _btn_retry = instance_create_layer(_cx - 150, _cy + _btn_y_offset, "Instances", obj_longButton);
+            _btn_retry.button_type = "RETRY";
+            _btn_retry.button_text = "다시하기";
+            _btn_retry.depth = -1000;
 					
-					// 2. '상점으로' 버튼 생성
-					var _btn_shop = instance_create_layer(_cx - 270, _cy + _btn_y_offset, "Instances", obj_longButton);
-			        _btn_shop.button_type = "GO_SHOP"; // 💡 타입 설정
-			        _btn_shop.button_text = "상점으로"; // 텍스트 설정
-			        _btn_shop.depth = -1000;
+            // 2. '상점으로' 버튼 생성
+            var _btn_shop = instance_create_layer(_cx - 270, _cy + _btn_y_offset, "Instances", obj_longButton);
+            _btn_shop.button_type = "GO_SHOP";
+            _btn_shop.button_text = "상점으로";
+            _btn_shop.depth = -1000;
 					
-					end_buttons_created = true;
-				}
-		    }
-		}
+            end_buttons_created = true;
+        }
+    }
+}
 	}
 }

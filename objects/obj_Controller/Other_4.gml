@@ -5,6 +5,8 @@ if (room == room_Mine){
         end_buttons_created = false;
     }
 	
+	timeup_sfx_played = false; // 🔊 TIME UP 사운드 플래그도 리셋
+	
 	global.is_playing = false; // 처음에는 카운트다운 중이므로 false
     
     // 2. 시간 및 재화 초기화
